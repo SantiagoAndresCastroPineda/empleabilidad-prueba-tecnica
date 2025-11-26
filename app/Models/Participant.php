@@ -21,16 +21,13 @@ class Participant extends Model
         'ciudad',
         'nivel_educativo',
         'años_experiencia',
-        'estado',
          ];
 
            protected static function booted()
             {
                 static::creating(function ($participant) {
-                    $edad = \Carbon\Carbon::parse($participant->fecha_nacimiento)->age;
-
-                    // joven si < 29 años
-                    $persona->es_joven = $edad < 29;
+                $edad = \Carbon\Carbon::parse($participant->fecha_nacimiento)->age;
+                $participant->es_joven = $edad < 29;
                 });
     }
 

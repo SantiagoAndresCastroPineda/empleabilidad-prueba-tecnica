@@ -3,6 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\ParticipantController;
+use App\Http\Controllers\JobVacancyController;
+
 use App\Models\Company;
 /*
 |--------------------------------------------------------------------------
@@ -24,3 +27,13 @@ Route::get('/empresas/crear', [CompanyController::class, 'create']);
 Route::post('/empresas',[CompanyController::class,'creates']);
 Route::get('/empresas/{id}',[CompanyController::class,'findById']);
 
+Route::get('/participantes',[ParticipantController::class,'listParticipant']);
+Route::get('/participantes/crear',[ParticipantController::class,'']);
+Route::post('/participantes',[ParticipantController::class,'creates']);
+Route::get('/participantes/{id}',[ParticipantController::class,'findById']);
+
+
+Route::get('/vacantes',[JobVacancyController::class,'listVacancy']);
+Route::get('/vacantes/crear',[JobVacancyController::class,'']);
+Route::post('/vacantes',[JobVacancyController::class,'creates']);
+Route::get('/vacantes/{id}',[JobVacancyController::class,'findById']);
