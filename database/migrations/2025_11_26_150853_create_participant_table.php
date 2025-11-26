@@ -14,7 +14,6 @@ return new class extends Migration
     {
         Schema::create('participant', function (Blueprint $table) {
              $table->id();
-
         $table->string('numero_documento')->unique();
         $table->string('nombres');
         $table->string('apellidos');

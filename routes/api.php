@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CompanyController;
+use App\Models\Company;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,6 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/suscribete',function(){
-    return "Hola buenos dias";
-});
+Route::get('/empresas', [CompanyController::class, 'index']);
+Route::get('/empresas/crear', [CompanyController::class, 'create']);
+Route::post('/empresas',[CompanyController::class,'create']);
+Route::post('/empresas/{id}',[CompanyController::class,'create']);

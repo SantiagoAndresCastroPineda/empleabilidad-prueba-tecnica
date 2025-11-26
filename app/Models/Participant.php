@@ -9,7 +9,8 @@ use Carbon\Carbon;
 class Participant extends Model
 {
     use HasFactory;
-    
+        protected $table = 'participant';
+
          protected $fillable = [
         'numero_documento',
         'nombres',
