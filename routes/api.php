@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\ParticipantController;
 use App\Http\Controllers\JobVacancyController;
+use App\Http\Controllers\ApplicationController;
 
 use App\Models\Company;
 /*
@@ -37,3 +38,9 @@ Route::get('/vacantes',[JobVacancyController::class,'listVacancy']);
 Route::get('/vacantes/crear',[JobVacancyController::class,'']);
 Route::post('/vacantes',[JobVacancyController::class,'creates']);
 Route::get('/vacantes/{id}',[JobVacancyController::class,'findById']);
+
+
+Route::get('/aplication',[ApplicationController::class,'listAplication']);
+Route::get('/aplication/crear',[ApplicationController::class,'']);
+Route::post('/aplication',[ApplicationController::class,'creates']);
+Route::get('/aplication/{id}',[ApplicationController::class,'findById']);
