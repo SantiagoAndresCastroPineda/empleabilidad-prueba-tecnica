@@ -1,0 +1,352 @@
+{
+	"info": {
+		"_postman_id": "dd95da53-e978-4e6b-8c52-e0f3b5353553",
+		"name": "TEST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42791152",
+		"_collection_link": "https://tester-5946.postman.co/workspace/TESTER~62ace7e6-e301-4fb8-89ed-84a86ffe4444/collection/42791152-dd95da53-e978-4e6b-8c52-e0f3b5353553?action=share&source=collection_link&creator=42791152"
+	},
+	"item": [
+		{
+			"name": "Application",
+			"item": [
+				{
+					"name": "ListAplications",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/aplication",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"aplication"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateAplication",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"participant_id\": 1,\r\n  \"job_vacancy_id\": 4\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/aplication",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"aplication"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/aplication/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"aplication",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateAplication",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"participant_id\": 2,\r\n    \"job_vacancy_id\": 2,\r\n    \"estado\": \"rechazado\",\r\n    \"puntaje\": 0,\r\n    \"fecha_postulacion\": \"2025-11-26 17:29:07\",\r\n    \"created_at\": \"2025-11-26T22:29:07.000000Z\",\r\n    \"updated_at\": \"2025-11-26T22:29:07.000000Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/aplication",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"aplication"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Company",
+			"item": [
+				{
+					"name": "CreateCompany",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n    \"nit\": \"8901234567890-1\",\r\n    \"nombre_empresa\": \"Consultoría Global S.A.\",\r\n    \"email\": \"consultoria@global.com\",\r\n    \"telefono\": \"3112345678\",\r\n    \"ciudad\": \"Cartagena\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/empresas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"empresas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ListCompany",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/empresas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"empresas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/empresas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"empresas",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "JobVacancy",
+			"item": [
+				{
+					"name": "ListJobVacancy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/vacantes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vacantes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateJobVacancy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " \r\n  {\r\n    \"company_id\": \"2\",\r\n    \"titulo\": \"Especialista en Marketing Digital\",\r\n    \"descripcion\": \"Planificación y ejecución de campañas de marketing online, SEO y SEM.\",\r\n    \"salario\": \"28000000\",\r\n    \"experiencia_minima_años\": \"3\",\r\n    \"fecha_cierre\": \"2029-11-30\",\r\n    \"ciudad\": \"Pasto\",\r\n    \"años_experiencia\": \"4\",\r\n    \"nivel_educativo_minimo\": \"tecnólogo\",\r\n    \"numero_vacantes\": 1\r\n  } ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/vacantes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vacantes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/vacantes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vacantes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Participant",
+			"item": [
+				{
+					"name": "ListParticipants",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/participantes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"participantes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateParticipant",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n\r\n  {\r\n    \"numero_documento\": \"11098765\",\r\n    \"nombres\": \"Carolina María\",\r\n    \"apellidos\": \"Jiménez Peña\",\r\n    \"telefono\": \"3119087365\",\r\n    \"email\": \"carolina.jimenez@gmail.com\",\r\n    \"ciudad\": \"Santa Marta\",\r\n    \"años_experiencia\": \"11\",\r\n    \"fecha_nacimiento\": \"1992-06-15\"\r\n  }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/participantes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"participantes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/participantes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"participantes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
