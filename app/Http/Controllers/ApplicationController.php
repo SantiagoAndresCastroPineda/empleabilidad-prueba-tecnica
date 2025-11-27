@@ -12,7 +12,7 @@ use App\Models\JobVacancy;
 
 class ApplicationController extends Controller
 {
-       function listApplication(){
+       function listAplication(){
         $result = Application::paginate(10);
         return response()->json($result);
     }
@@ -73,8 +73,34 @@ class ApplicationController extends Controller
         }
     return response()->json($Application);
     }
-    public function create()
-{
-
-}
+    public function update(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'id' => 'required|exists:application,id', 
+            'participant_id' => 'required|exists:participant,id',
+            'job_vacancy_id' => 'required|exists:job_vacancy,id',
+            'estado'=>'required|string'
+       
+        ]);  
+    if ($validator->fails()) {
+        return response()->json([
+            'message' => 'Error de validación',
+            'errors' => $validator->errors()
+        ], 422);  
+    }
+        $application = Application::find($request->id);
+ if (!$application) {
+        return response()->json([
+            'message' => 'Aplicación no encontrada'
+        ], 404);  
+    }
+    $application->participant_id = $request->participant_id;
+    $application->job_vacancy_id = $request->job_vacancy_id;
+    $application->estado = $request->estado; 
+    $application->save();
+    return response()->json([
+        'message' => 'Aplicación actualizada correctamente',
+        'application' => $application
+    ], 200);  
+    }
 }

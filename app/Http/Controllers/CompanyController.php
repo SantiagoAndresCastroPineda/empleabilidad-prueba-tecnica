@@ -13,9 +13,9 @@ class CompanyController extends Controller
     }
     function creates(Request $request){
         $validator = Validator::make($request->all(), [
-            'nit' => 'required|string|max:50',
+            'nit' => 'required|string|max:50|unique:company,nit',
             'nombre_empresa' => 'required|string|max:255',
-            'email' => 'nullable|email|max:255',
+            'email' => 'nullable|email|max:255|unique:company,email',
             'telefono' => ['required','digits:10'],
             'ciudad' => 'nullable|string|max:100',
         ]);

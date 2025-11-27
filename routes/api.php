@@ -24,7 +24,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/empresas', [CompanyController::class, 'listCompany']);
-Route::get('/empresas/crear', [CompanyController::class, 'create']);
+Route::put('/empresas', [CompanyController::class, 'update']);
 Route::post('/empresas',[CompanyController::class,'creates']);
 Route::get('/empresas/{id}',[CompanyController::class,'findById']);
 
@@ -41,6 +41,6 @@ Route::get('/vacantes/{id}',[JobVacancyController::class,'findById']);
 
 
 Route::get('/aplication',[ApplicationController::class,'listAplication']);
-Route::get('/aplication/crear',[ApplicationController::class,'']);
+Route::put('/aplication',[ApplicationController::class,'update']);
 Route::post('/aplication',[ApplicationController::class,'creates']);
 Route::get('/aplication/{id}',[ApplicationController::class,'findById']);
